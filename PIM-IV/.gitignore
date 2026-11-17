@@ -1,0 +1,8 @@
+.env
+bin/
+obj/
+node_modules/
+dist/
+.dart_tool/
+*.user
+.vscode/

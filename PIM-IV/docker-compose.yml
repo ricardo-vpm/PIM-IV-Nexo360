@@ -1,0 +1,14 @@
+# Desenvolvimento local: defina SA_PASSWORD no ambiente ou no arquivo .env ignorado pelo Git.
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: Developer
+      MSSQL_SA_PASSWORD: ${SA_PASSWORD:?Defina SA_PASSWORD primeiro}
+    ports:
+      - "127.0.0.1:1433:1433"
+    volumes:
+      - nexosqldata:/var/opt/mssql
+volumes:
+  nexosqldata:
